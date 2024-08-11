@@ -7,7 +7,7 @@ $dbPassword = "";
 $dbName = "educ_assist";
 ```
 
-- You need this to fetch the table &#8595;
+- This is for the **table in database** &#8595;
 ```php
 $tableUser = "users";
 ```
@@ -17,7 +17,7 @@ $tableUser = "users";
 $domain = "http://localhost/iskolar/";
 ```
 
-- You need this for Directories &#8595;
+- This is for the **file names** &#8595;
 ```php
 $loginPage = "login.php";
 $registerPage = "register.php";
