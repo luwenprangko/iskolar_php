@@ -55,7 +55,6 @@ if (isset($_POST['login'])) {
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
-
                 <?php
                 if (isset($errorMsg)) {
                     echo
@@ -67,7 +66,6 @@ if (isset($_POST['login'])) {
                     ";
                 }
                 ?>
-
                 <h1 class="text-center mb-5">Login</h1>
                 <form action="" method="post" class="row g-3 needs-validation" novalidate>
                     <div class="col-md-12">

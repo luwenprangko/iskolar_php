@@ -39,6 +39,7 @@ if (mysqli_num_rows($result) == 1) {
 </head>
 <body>
 
+
 <div class="container p-5">
     <h4><?php echo $firstName_database .' '. $middleName_database .' '. $lastName_database ?></h4>
     <h5><?php echo $role_database ?></h5>

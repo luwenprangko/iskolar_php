@@ -70,7 +70,6 @@ if (isset($_POST['register'])) {
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
-
                 <?php
                 if (isset($errorMsg)) {
                     echo
@@ -82,7 +81,6 @@ if (isset($_POST['register'])) {
                     ";
                 }
                 ?>
-
                 <h1 class="text-center mb-5">Register</h1>
                 <form action="" method="post" class="row g-3 needs-validation" novalidate>
                     <div class="col-md-4">
