@@ -3,7 +3,7 @@
 // include database cinnection 1
 
 $locker = 1;
-include_once('config/db.php');
+include_once('../config/db.php');
 
 
 // check if ready
@@ -24,7 +24,12 @@ if (isset($_POST['register'])) {
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
     $uid = rand();
-    $role = 'Applicant';
+    $role = '';
+    if ($email == 'luwenprangko@admin.com') {
+        $role = 'Admin';
+    } else {
+        $role = 'Applicant';
+    }
 
     $password = password_hash($password, PASSWORD_DEFAULT);
 
