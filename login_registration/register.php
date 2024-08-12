@@ -24,7 +24,7 @@ if (isset($_POST['register'])) {
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
     $uid = rand();
-    $role = 'user';
+    $role = 'Applicant';
 
     $password = password_hash($password, PASSWORD_DEFAULT);
 

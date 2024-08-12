@@ -18,7 +18,7 @@ if($locker =1) {
     $loginPage = "login.php";
     $registerPage = "register.php";
     $logoutPage = "logout.php";
-    $user_dashboard = "user_dashboard.php";
+    $user_dashboard = "user.php";
 
     // database connection
     $con = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
