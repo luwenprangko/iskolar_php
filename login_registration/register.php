@@ -9,7 +9,7 @@ include_once('config/db.php');
 // check if ready
 session_start();
 if(isset($_SESSION ['id'])) {
-    header("Location: $dashboardPage");
+    header("Location: $user_dashboard");
 }
 
 if (isset($_POST['register'])) {

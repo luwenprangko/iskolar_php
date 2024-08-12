@@ -22,7 +22,7 @@ $domain = "http://localhost/iskolar/";
 $loginPage = "login.php";
 $registerPage = "register.php";
 $logoutPage = "logout.php";
-$dashboardPage = "dashboard.php";
+$user_dashboard = "dashboard.php";
 ```
 
   - Connection of the database server &#8595;
@@ -59,7 +59,7 @@ if($locker =1) {
     $loginPage = "login.php";
     $registerPage = "register.php";
     $logoutPage = "logout.php";
-    $dashboardPage = "dashboard.php";
+    $user_dashboard = "dashboard.php";
 
     // database connection
     $con = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
