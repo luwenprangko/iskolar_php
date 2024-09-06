@@ -25,7 +25,7 @@ if (isset($_POST['register'])) {
 
     $uid = rand();
     $role = '';
-    if ($email == 'luwenprangko@admin.com') {
+    if ($email == 'admin@admin.com') {
         $role = 'Admin';
     } else {
         $role = 'Applicant';
