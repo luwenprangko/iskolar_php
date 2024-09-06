@@ -100,7 +100,7 @@ if (isset($_POST['register'])) {
 
                     <div class="col-md-4">
                         <label for="validationCustom01" class="form-label">Middle Name :</label>
-                        <input type="text" name="middleName" class="form-control" id="validationCustom01" placeholder="A." required>
+                        <input type="text" name="middleName" class="form-control" id="validationCustom01" placeholder="A.">
                     </div>
 
                     <div class="col-md-12">
