@@ -1,28 +1,26 @@
 <?php
 
-// include database cinnection 1
-
+// include database connection
 $locker = 1;
 include_once('../config/db.php');
 
-
 // check if ready
 session_start();
-if(isset($_SESSION ['id'])) {
+if (isset($_SESSION['uid'])) {
     header("Location: $user_dashboard");
 }
 
 if (isset($_POST['register'])) {
     $errorMsg = "";
 
-    // $lastName = $_POST['$lastName'] < DONT HAVE GOOD SECURITY
-    // BELOW IS THE BEST SECURITY
+    // Secure form data using mysqli_real_escape_string
     $lastName = mysqli_real_escape_string($con, $_POST['lastName']);
     $firstName = mysqli_real_escape_string($con, $_POST['firstName']);
     $middleName = mysqli_real_escape_string($con, $_POST['middleName']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
+    // Generate unique uid for the user
     $uid = rand();
     $role = '';
     if ($email == 'admin@admin.com') {
@@ -31,28 +29,32 @@ if (isset($_POST['register'])) {
         $role = 'Applicant';
     }
 
+    // Hash the password using password_hash
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = " SELECT * FROM $tableUser WHERE email = '$email' ";
+    // Check if the email already exists
+    $sql = "SELECT * FROM $tableUser WHERE email = '$email'";
     $execute = mysqli_query($con, $sql);
 
-    // check if the user is exist
+    // Validate the inputs
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errorMsg = 'Email is not valid try again';
+        $errorMsg = 'Email is not valid, please try again';
     } else if (strlen($password) <= 6) {
-        $errorMsg = 'Password must have atleast 6 digits or more';
+        $errorMsg = 'Password must have at least 6 characters';
     } else if ($execute->num_rows == 1) {
-        $errorMsg = 'Email is Already Exists';
+        $errorMsg = 'Email already exists';
     } else {
-        $query = " INSERT INTO $tableUser (uid, lastName, firstName, middlename, email, password, role) VALUES
-        ('$uid', '$lastName', '$firstName', '$middleName', '$email', '$password', '$role') ";
+        // Insert new user into the database
+        $query = "INSERT INTO $tableUser (uid, lastName, firstName, middleName, email, password, role) VALUES
+        ('$uid', '$lastName', '$firstName', '$middleName', '$email', '$password', '$role')";
 
         $result = mysqli_query($con, $query);
 
+        // Redirect to login page if registration is successful
         if ($result == true) {
             header("Location: $loginPage");
         } else {
-            $errorMsg = "You are valid bro";
+            $errorMsg = "An error occurred. Please try again.";
         }
     }
 }

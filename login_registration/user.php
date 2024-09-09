@@ -3,20 +3,21 @@
 $locker = 1;
 include_once('../config/db.php');
 
-
-// already login
+// Check if user is already logged in
 session_start();
-if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['uid'])) {
     header("Location: $loginPage");
 }
 
-$id = $_SESSION['id'];
-$query = " SELECT * FROM $tableUser WHERE id = '$id' ";
+$uid = $_SESSION['uid'];
+
+// Query the user data using uid
+$query = "SELECT * FROM $tableUser WHERE uid = '$uid'";
 $result = mysqli_query($con, $query);
 
 if (mysqli_num_rows($result) == 1) {
     while ($row = mysqli_fetch_assoc($result)) {
-        $id_database = $row['id'];
+        // Fetch and assign the user data
         $uid_database = $row['uid'];
         $firstName_database = $row['firstName'];
         $middleName_database = $row['middleName'];

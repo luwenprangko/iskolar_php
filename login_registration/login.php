@@ -3,9 +3,9 @@
 $locker = 1;
 include_once("../config/db.php");
 
-// check if ready
+// Check if session is already active
 session_start();
-if(isset($_SESSION ['id'])) {
+if (isset($_SESSION['uid'])) {
     header("Location: $user_dashboard");
 }
 
@@ -13,32 +13,37 @@ if (isset($_POST['login'])) {
 
     $errorMsg = "";
 
+    // Secure form data using mysqli_real_escape_string
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    if (!empty('$email') || !empty('$password')){
+    if (!empty($email) && !empty($password)) {
 
-        // check ang email kung peron na at kapag meron na...
-        $query = " SELECT * FROM $tableUser WHERE email = '$email' ";
+        // Query to check if the email exists in the database
+        $query = "SELECT * FROM $tableUser WHERE email = '$email'";
         $result = mysqli_query($con, $query);
 
-        // kapag meron ng email, kelangan na lang ay password ang itatype na sunod
-        if (mysqli_num_rows($result) == 1 ) {
+        // If email exists, verify the password
+        if (mysqli_num_rows($result) == 1) {
             while ($row = mysqli_fetch_assoc($result)) {
                 if (password_verify($password, $row['password'])) {
-                    $_SESSION['id'] = $row['id'];
+                    // Set session using uid instead of id
+                    $_SESSION['uid'] = $row['uid'];
                     header("Location: $user_dashboard");
                 } else {
-                    $errorMsg = " Eamil or Password is invalid";
+                    $errorMsg = "Email or Password is invalid";
                 }
             }
         } else {
             $errorMsg = "No user found";
         }
+    } else {
+        $errorMsg = "Email and Password cannot be empty";
     }
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
