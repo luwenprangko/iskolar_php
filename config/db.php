@@ -6,7 +6,12 @@ $dbUsername = "root";
 $dbPassword = "";
 $dbName = "educ_assist";
 
-if($locker =1) {
+if($locker = 1) {
+    // table
+    $tableUser = "users";
+}
+
+if($locker = 2) {
     // table
     $tableUser = "users";
 }
