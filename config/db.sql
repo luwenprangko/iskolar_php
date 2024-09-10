@@ -9,7 +9,7 @@ CREATE TABLE users (
     password VARCHAR(255)
 );
 
--- Create the representatives table with uid as a foreign keys
+-- Create the representatives table with uid as a foreign key
 CREATE TABLE representatives (
     uid VARCHAR(255),
     FOREIGN KEY (uid) REFERENCES users(uid)
