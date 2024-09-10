@@ -14,3 +14,18 @@ CREATE TABLE representatives (
     uid VARCHAR(255),
     FOREIGN KEY (uid) REFERENCES users(uid)
 );
+
+CREATE TABLE educ (
+    uid VARCHAR(255),
+    FOREIGN KEY (uid) REFERENCES users(uid)
+);
+
+CREATE TABLE family (
+    uid VARCHAR(255),
+    FOREIGN KEY (uid) REFERENCES users(uid)
+);
+
+CREATE TABLE siblings (
+    uid VARCHAR(255),
+    FOREIGN KEY (uid) REFERENCES users(uid)
+);
