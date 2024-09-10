@@ -1,62 +1,68 @@
 <?php
 
 // include database connection
-$locker = 1;
+$lockerReg = 1;
 include_once('../config/db.php');
 
-// check if ready
-session_start();
-if (isset($_SESSION['uid'])) {
-    header("Location: $user_dashboard");
-}
+if ($lockerReg == $locker) {
 
-if (isset($_POST['register'])) {
-    $errorMsg = "";
-
-    // Secure form data using mysqli_real_escape_string
-    $lastName = mysqli_real_escape_string($con, $_POST['lastName']);
-    $firstName = mysqli_real_escape_string($con, $_POST['firstName']);
-    $middleName = mysqli_real_escape_string($con, $_POST['middleName']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
-
-    // Generate unique uid for the user
-    $uid = rand();
-    $role = '';
-    if ($email == 'admin@admin.com') {
-        $role = 'Admin';
-    } else {
-        $role = 'Applicant';
+    // check if ready
+    session_start();
+    if (isset($_SESSION['uid'])) {
+        header("Location: $user_dashboard");
     }
 
-    // Hash the password using password_hash
-    $password = password_hash($password, PASSWORD_DEFAULT);
+    if (isset($_POST['register'])) {
+        $errorMsg = "";
 
-    // Check if the email already exists
-    $sql = "SELECT * FROM $tableUser WHERE email = '$email'";
-    $execute = mysqli_query($con, $sql);
+        // Secure form data using mysqli_real_escape_string
+        $lastName = mysqli_real_escape_string($con, $_POST['lastName']);
+        $firstName = mysqli_real_escape_string($con, $_POST['firstName']);
+        $middleName = mysqli_real_escape_string($con, $_POST['middleName']);
+        $email = mysqli_real_escape_string($con, $_POST['email']);
+        $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    // Validate the inputs
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errorMsg = 'Email is not valid, please try again';
-    } else if (strlen($password) <= 6) {
-        $errorMsg = 'Password must have at least 6 characters';
-    } else if ($execute->num_rows == 1) {
-        $errorMsg = 'Email already exists';
-    } else {
-        // Insert new user into the database
-        $query = "INSERT INTO $tableUser (uid, lastName, firstName, middleName, email, password, role) VALUES
-        ('$uid', '$lastName', '$firstName', '$middleName', '$email', '$password', '$role')";
-
-        $result = mysqli_query($con, $query);
-
-        // Redirect to login page if registration is successful
-        if ($result == true) {
-            header("Location: $loginPage");
+        // Generate unique uid for the user
+        $uid = rand();
+        $role = '';
+        if ($email == 'admin@admin.com') {
+            $role = 'Admin';
         } else {
-            $errorMsg = "An error occurred. Please try again.";
+            $role = 'Applicant';
+        }
+
+        // Hash the password using password_hash
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
+        // Check if the email already exists
+        $sql = "SELECT * FROM $tableUser WHERE email = '$email'";
+        $execute = mysqli_query($con, $sql);
+
+        // Validate the inputs
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errorMsg = 'Email is not valid, please try again';
+        } else if (strlen($password) <= 6) {
+            $errorMsg = 'Password must have at least 6 characters';
+        } else if ($execute->num_rows == 1) {
+            $errorMsg = 'Email already exists';
+        } else {
+            // Insert new user into the database
+            $query = "INSERT INTO $tableUser (uid, lastName, firstName, middleName, email, password, role) VALUES
+            ('$uid', '$lastName', '$firstName', '$middleName', '$email', '$password', '$role')";
+
+            $result = mysqli_query($con, $query);
+
+            // Redirect to login page if registration is successful
+            if ($result == true) {
+                header("Location: $loginPage");
+            } else {
+                $errorMsg = "An error occurred. Please try again.";
+            }
         }
     }
+
+} else {
+    echo("Closed");
 }
 
 ?>
@@ -103,6 +109,21 @@ if (isset($_POST['register'])) {
                     <div class="col-md-4">
                         <label for="validationCustom01" class="form-label">Middle Name :</label>
                         <input type="text" name="middleName" class="form-control" id="validationCustom01" placeholder="A.">
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="municipalitySelect">Municipality :</label>
+                            <select name="municipality" class="form-control" id="municipalitySelect" required>
+                                <option value="" disabled selected>Select a Municipality</option>
+                                <option value="Bauan">Bauan</option>
+                                <option value="Lobo">Lobo</option>
+                                <option value="Mabini">Mabini</option>
+                                <option value="San Luis">San Luis</option>
+                                <option value="San Pascual">San Pascual</option>
+                                <option value="Tingloy">Tingloy</option>
+                            </select>
+                        </div> 
                     </div>
 
                     <div class="col-md-12">
