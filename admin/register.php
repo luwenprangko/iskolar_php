@@ -24,12 +24,7 @@ if ($lockerReg == $lockerRegDB) {
 
         // Generate unique uid for the user
         $uid = rand();
-        $role = '';
-        if ($email == 'admin@admin.com') {
-            $role = 'Admin';
-        } else {
-            $role = 'Applicant';
-        }
+        $role = 'Admin';
 
         // Hash the password using password_hash
         $password = password_hash($password, PASSWORD_DEFAULT);

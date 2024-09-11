@@ -11,11 +11,6 @@ if($lockerRegDB = 1) {
     $tableUser = "users";
 }
 
-if($lockerAppForm = 2) {
-    // table
-    $tableUser = "users";
-}
-
 // domain
 $domain = "http://localhost/iskolar/";
 

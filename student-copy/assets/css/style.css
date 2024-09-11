@@ -1,0 +1,8 @@
+@font-face {
+    font-family: helmet;
+    src: url(../fonts/helmet.ttf);
+}
+
+* {
+    user-select: none;
+}
