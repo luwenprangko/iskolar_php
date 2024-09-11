@@ -20,7 +20,7 @@ if($lockerAppForm = 2) {
 $domain = "http://localhost/iskolar/";
 
 // pages
-$loginPage = "login.php";
+$loginPage = "index.php";
 $registerPage = "register.php";
 $logoutPage = "logout.php";
 $user_dashboard = "user.php";

@@ -1,7 +1,7 @@
 <?php
 
 $locker = 1;
-include_once('../config/db.php');
+include_once('./config/db.php');
 
 if (!isset($_SESSION['uid'])) { session_start(); }
 

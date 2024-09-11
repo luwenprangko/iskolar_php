@@ -2,7 +2,7 @@
 
 // include database connection
 $lockerReg = 1;
-include_once('../config/db.php');
+include_once('./config/db.php');
 
 if ($lockerReg == $lockerRegDB) {
 

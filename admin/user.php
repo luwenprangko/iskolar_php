@@ -1,7 +1,7 @@
 <?php
 
 $locker = 1;
-include_once('../config/db.php');
+include_once('./config/db.php');
 
 // Check if user is already logged in
 session_start();
