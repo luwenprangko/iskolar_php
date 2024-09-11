@@ -4,30 +4,22 @@
 $dbHost = "localhost";
 $dbUsername = "root";
 $dbPassword = "";
-$dbName = "educ_assist";
+$dbName = "form";
 
-if($lockerRegDB = 1) {
+if($locker = 2) {
     // table
-    $tableUser = "users";
-}
-
-if($lockerAppForm = 2) {
-    // table
-    $tableUser = "users";
+    $table1 = "table1";
+    $table2 = "table2";
 }
 
 // domain
 $domain = "http://localhost/iskolar/";
 
 // pages
-$loginPage = "login.php";
-$registerPage = "register.php";
-$logoutPage = "logout.php";
-$user_dashboard = "user.php";
+$formPage = "form.php";
 
 // database connection
 $con = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-
 // check connection
 if ($con->connect_error){
     die("Connection Failed" . $con->connect_error);

@@ -1,0 +1,53 @@
+
+.parent-container {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.logo {
+    margin-top: 10px;
+    display: block;
+    position: static;
+    top: auto;
+    left: auto;
+}
+
+@media screen and (min-width: 921px) {
+    .logo {
+        position: absolute;
+        top: 10px;
+        left: 70px;
+    }
+}
+
+.no-style {
+    all: unset;
+}
+
+.plain-table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse; /* Collapse borders into a single border */
+    margin: 0 auto; /* Center the table */
+    background-color: inherit; /* White background for the table */
+}
+
+.plain-table th {
+    padding: 10px;
+}
+
+.plain-table th, .plain-table td {
+    text-align: left; /* Align text to the left */
+    border: 1px solid rgb(203, 203, 203); /* Light gray border for cells */
+}
+
+.plain-table th {
+    background-color: inherit; /* Slightly different background color for header cells */
+    font-weight: bold; /* Bold font for header text */
+}
+
+.plain-table tr:nth-child(even) {
+    background-color: inherit; /* Alternate row color for better readability */
+}
+

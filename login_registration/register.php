@@ -4,7 +4,7 @@
 $lockerReg = 1;
 include_once('../config/db.php');
 
-if ($lockerReg == $locker) {
+if ($lockerReg == $lockerRegDB) {
 
     // check if ready
     session_start();

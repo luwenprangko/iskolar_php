@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" style="user-select: none;" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<div class="w-100 bg-primary">
+    <div class="parent-container">
+        <div class="logo">
+            <img src="./a.jpg" width="100" alt="">
+        </div>
+    </div>
+    <div class="container text-center text-white">
+        <div class="fw-bolder fw-bold h4 mb-0">CONG. ATTY. GERVILLE "JINKY BITRICS" LUISTRO</div>
+        <div>2ND DISTRICT OF BATANGAS</div>
+    </div>
+</div>
+
+<main class="container mb-3 main-container">
+<section class="card container px-md-5 mt-5">
+
+<h1 class="fw-bolder text-center mt-5">BITRICS SCHOLARSHIP FORM</h1>
+<br><br>
+
+<form action="" method="post" class="needs-validation" novalidate>
+    <div class="row">
+        <div class="col-md-2 d-flex align-items-center">
+            <label for="" class="me-2">DATE:</label>
+            <input name="date" type="date" class="form-control" style="width: auto;" id="validationCustom01" required>
+        </div>
+    </div>
+    <hr><br>
+
+
+<!-- REPRESENTATIVE -->
+    <div class="rep-info">
+        <h4 class="fw-bolder mb-3 text-center">REPRESENTATIVE'S IDENTIFYING INFORMATION</h4>
+
+        <div class="row mb-3 g-2">
+            <div class="col-md">
+                <label for="">LAST NAME :</label>
+                <input name="lastName" type="text" class="form-control" aria-label="Last name" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <label for="">FIRST NAME :</label>
+                <input name="firstName" type="text" class="form-control" aria-label="First name" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <label for="">MIDDLE NAME :</label>
+                <input name="middleName" type="text" class="form-control" aria-label="Middle name">
+            </div>
+            <div class="col-md">
+                <label for="">EXT NAME :</label>
+                <input name="extName" type="text" class="form-control" aria-label="Ext name">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label for="">ADDRESS :</label>
+                <input name="address" type="text" class="form-control" aria-label="Address" id="validationCustom01" required>
+            </div>
+        </div>
+
+        <div class="row mb-3 g-2">
+            <div class="col-md">
+                <label for="">CONTACT NO :</label>
+                <input name="contact" type="text" class="form-control" placeholder="" aria-label="Contact No" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <label for="">DATE OF BIRTH :</label>
+                <input name="birth" type="date" class="form-control" aria-label="Date of Birth" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <label for="">AGE :</label>
+                <input name="age" type="number" class="form-control" placeholder="" aria-label="Age" id="validationCustom01" required>
+            </div>
+        </div>
+
+        <div class="row mb-3 g-2">
+            <div class="col-md">
+                <label for="">GCASH NO :</label>
+                <input name="gcash" type="text" class="form-control" placeholder="" aria-label="Contact No">
+            </div>
+            <div class="col-md">
+                <div class="form-group">
+                    <label for="">CIVIL STATUS :</label>
+                    <select name="civil_status" class="form-control" id="validationCustom01" required>
+                        <option value="" disabled selected></option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                    </select>
+                </div> 
+            </div>
+            <div class="col-md">
+                <div class="form-group">
+                    <label for="">GENDER :</label>
+                    <select name="gender" class="form-control" id="validationCustom01" required>
+                        <option disabled selected></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div> 
+            </div>
+        </div>
+    </div>
+<!-- END REPRESENTATIVE -->
+
+<!-- EDUCATION -->
+    <div class="for-ed mb-5 mt-5">
+        <h4 class="fw-bolder mb-3 text-center">FOR EDUCATION</h4>
+
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <label for="">COURSE / PROGRAM :</label>
+                <input name="program" type="text" class="form-control" aria-label="Program" id="validationCustom01" required>
+            </div>
+            <div class="col-md-12">
+                <label for="">YEAR LEVEL :</label>
+                <input name="yrLevel" type="text" class="form-control" aria-label="Year Level" id="validationCustom01" required>
+            </div>
+        </div>
+    </div>
+<!-- END EDUCATION -->
+
+<!-- FAMILY -->
+    <div class="fam">
+        <h4 class="fw-bolder mb-3 text-center">FAMILY COMPOSITION</h4>
+
+        <div class="row mb-3 g-2">
+            <h5 class="fw-bolder">Father :</h5>
+            <div class="col-md">
+                <label for="">LAST NAME :</label>
+                <input name="f_lastName" type="text" class="form-control" aria-label="Last name" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <label for="">FIRST NAME :</label>
+                <input name="f_firstName" type="text" class="form-control" aria-label="First name" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <label for="">MIDDLE NAME :</label>
+                <input name="f_middleName" type="text" class="form-control" aria-label="Middle name">
+            </div>
+            <div class="col-md">
+                <label for="">EXT NAME :</label>
+                <input name="f_extName" type="text" class="form-control" aria-label="Ext name">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label for="">ADDRESS :</label>
+                <input name="f_address" type="text" class="form-control" aria-label="Address" id="validationCustom01" required>
+            </div>
+        </div>
+
+        <div class="row mb-3 g-2">
+            <div class="col-md">
+                <label for="">CONTACT NO :</label>
+                <input name="f_contact" type="text" class="form-control" placeholder="" aria-label="Contact No" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <label for="">DATE OF BIRTH :</label>
+                <input name="f_birth" type="date" class="form-control" aria-label="Date of Birth" required>
+            </div>
+            <div class="col-md">
+                <label for="">AGE :</label>
+                <input name="f_age" type="number" class="form-control" aria-label="Contact No" id="validationCustom01" required>
+            </div>
+        </div>
+
+        <div class="row mb-3 g-2">
+            <div class="col-md">
+                <label for="">GCASH NO :</label>
+                <input name="f_gcash" type="text" class="form-control" aria-label="Gcash">
+            </div>
+            <div class="col-md">
+                <label for="">WORK :</label>
+                <input name="f_work" type="text" class="form-control" aria-label="Work" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <div class="form-group">
+                    <label for="">GENDER :</label>
+                    <select name="f_gender" class="form-control" id="validationCustom01" required>
+                        <option value="Male" selected>Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div> 
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="row mb-3 g-2">
+            <h5 class="fw-bolder">Mother :</h5>
+            <div class="col-md">
+                <label for="">LAST NAME :</label>
+                <input name="m_lastName" type="text" class="form-control" aria-label="Last name" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <label for="">FIRST NAME :</label>
+                <input name="m_firstName" type="text" class="form-control" aria-label="First name" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <label for="">MIDDLE NAME :</label>
+                <input name="m_middleName" type="text" class="form-control" aria-label="Middle name">
+            </div>
+            <div class="col-md">
+                <label for="">EXT NAME :</label>
+                <input name="m_extName" type="text" class="form-control" aria-label="Ext name">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label for="">ADDRESS :</label>
+                <input name="m_address" type="text" class="form-control" aria-label="Address" id="validationCustom01" required>
+            </div>
+        </div>
+
+        <div class="row mb-3 g-2">
+            <div class="col-md">
+                <label for="">CONTACT NO :</label>
+                <input name="m_contact" type="text" class="form-control" placeholder="" aria-label="Contact No" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <label for="">DATE OF BIRTH :</label>
+                <input name="m_birth" type="date" class="form-control" aria-label="Date of Birth" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <label for="">AGE :</label>
+                <input name="m_age" type="number" class="form-control" aria-label="Age" id="validationCustom01" required>
+            </div>
+        </div>
+
+        <div class="row mb-3 g-2">
+            <div class="col-md">
+                <label for="">GCASH NO :</label>
+                <input name="m_gcash" type="text" class="form-control" aria-label="Gcash">
+            </div>
+            <div class="col-md">
+                <label for="">WORK :</label>
+                <input name="m_work" type="text" class="form-control" aria-label="Work" id="validationCustom01" required>
+            </div>
+            <div class="col-md">
+                <div class="form-group">
+                    <label for="">GENDER :</label>
+                    <select name="m_gender" class="form-control" id="validationCustom01" required>
+                        <option value="Male">Male</option>
+                        <option value="Female" selected>Female</option>
+                    </select>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <div class="plain-table mt-5 mb-3">
+        <h4 class="fw-bolder mb-3 text-center">SIBLING COMPOSITION</h4>
+        <table class="w-100">
+            <thead>
+                <th>Name :</th>
+                <th>Age :</th>
+                <th>Contact :</th>
+            </thead>
+            <tr>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+                <td><input class="w-100 my-2 no-style" type="text" name="" id=""></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="text-center mb-3">
+        <input class="btn btn-primary w-25" type="submit" name="register" value="Submit">
+    </div>
+</form>
+<!-- END FAMILY -->
+
+</section>
+</main>
+
+<script>
+(() => {
+'use strict'
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+        form.classList.add('was-validated')
+        }, false)
+    })
+})()
+</script>
+
+</body>
+</html>
